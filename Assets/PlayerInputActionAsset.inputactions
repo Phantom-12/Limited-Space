@@ -24,12 +24,21 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Space",
+                    "name": "SpaceHold",
                     "type": "Button",
                     "id": "f6ffc508-2353-4e22-91d4-003985258b24",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpaceDoubleTap",
+                    "type": "Button",
+                    "id": "86dbd86f-8696-427a-ad5d-b854edaa835f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap",
                     "initialStateCheck": false
                 }
             ],
@@ -184,7 +193,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Space",
+                    "action": "SpaceHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6476b02e-aeff-49b9-96a9-58f181e0c2a1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpaceDoubleTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

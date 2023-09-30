@@ -11,7 +11,8 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY{get;private set;}
     public bool JumpInput{get;private set;}
     public bool JumpInputStop{get;private set;}
-    public bool SpaceInput{get;private set;}
+    public bool SpaceHoldInput{get;private set;}
+    public bool SpaceDoubleTapInput{get;private set;}
 
     [SerializeField]
     private float inputHoldTime;
@@ -49,17 +50,26 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void OnSpaceInput(InputAction.CallbackContext context)
+    public void OnSpaceHoldInput(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
             // Debug.Log("长按");
-            SpaceInput=true;
+            SpaceHoldInput=true;
         }
         else if(context.canceled)
         {
-            // Debug.Log("cancel");
-            SpaceInput=false;
+            // Debug.Log("长按cancel");
+            SpaceHoldInput=false;
+        }
+    }
+
+    public void OnSpaceDoubleTapInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            // Debug.Log("双击");
+            SpaceDoubleTapInput=true;
         }
     }
 
@@ -97,8 +107,8 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void UseSpaceInput()
+    public void UseSpaceDoubleTapInput()
     {
-        JumpInput=false;
+        SpaceDoubleTapInput=false;
     }
 }

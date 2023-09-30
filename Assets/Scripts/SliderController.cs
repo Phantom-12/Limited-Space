@@ -67,6 +67,7 @@ public class SliderController : MonoBehaviour
     void Update()
     {
         //UpdateFiller();
+        CheckSpaceDoubleTap();
         UpdatePointer();
         CheckSpacePress();
     }
@@ -131,12 +132,11 @@ public class SliderController : MonoBehaviour
 
     void CheckSpacePress()
     {
-        if(!inputHandler.SpaceInput)
+        if(!inputHandler.SpaceHoldInput)
         {
             ApplyOperation(OperationType.None);
             return;
         }
-        inputHandler.UseSpaceInput();
         float leftPos=pointerRect.anchoredPosition.x;
         float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
         foreach(var i in opList)
@@ -155,6 +155,14 @@ public class SliderController : MonoBehaviour
                 break;
             }
         }
+    }
+
+    void CheckSpaceDoubleTap()
+    {
+        if(!inputHandler.SpaceDoubleTapInput)
+            return;
+        pointerMovingRight=!pointerMovingRight;
+        inputHandler.UseSpaceDoubleTapInput();
     }
 
     void ApplyOperation(OperationType op)
