@@ -29,7 +29,7 @@
                     "id": "f6ffc508-2353-4e22-91d4-003985258b24",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 }
             ],
@@ -169,7 +169,7 @@
                 {
                     "name": "",
                     "id": "e346bdb0-ebd0-4557-a9d2-777dc35fbdfd",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -180,7 +180,7 @@
                 {
                     "name": "",
                     "id": "8dfc1707-86a3-437f-8a63-a385fa33e625",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

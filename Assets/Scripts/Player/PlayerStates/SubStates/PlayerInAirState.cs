@@ -46,7 +46,7 @@ public class PlayerInAirState : PlayerState
             jumpInput=player.InputHandler.JumpInput;
             jumpInputStop=player.InputHandler.JumpInputStop;
             CheckCoyoteTime();
-            CheckJumpMultiplier();
+            //CheckJumpMultiplier();
             if(isGrounded && player.Rb.velocity.y<=0.03f)
             {
                 stateMachine.ChangeState(player.IdleState);

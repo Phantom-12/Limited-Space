@@ -11,11 +11,12 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY{get;private set;}
     public bool JumpInput{get;private set;}
     public bool JumpInputStop{get;private set;}
+    public bool SpaceInput{get;private set;}
 
     [SerializeField]
     private float inputHoldTime;
     private float jumpStartTime;
-    private float dashStartTime;
+
 
     private void Start()
     {
@@ -47,6 +48,37 @@ public class PlayerInputHandler : MonoBehaviour
             JumpInputStop=true;
         }
     }
+
+    public void OnSpaceInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            // Debug.Log("长按");
+            SpaceInput=true;
+        }
+        else if(context.canceled)
+        {
+            // Debug.Log("cancel");
+            SpaceInput=false;
+        }
+    }
+
+    public void OnMoveInput(Vector2 Input)
+    {
+        RawMovementInput=Input;
+        NormInputX=(int)(RawMovementInput.x*Vector2.right).normalized.x;
+        NormInputY=(int)(RawMovementInput.y*Vector2.up).normalized.y;
+    }
+
+    public void OnJumpInput()
+    {
+        JumpInput=true;
+        JumpInputStop=false;
+        jumpStartTime=Time.time;
+        
+        JumpInputStop=true;
+    }
+
     public void UseJumpInput()
     {
         JumpInput=false;
@@ -63,5 +95,10 @@ public class PlayerInputHandler : MonoBehaviour
         {
             JumpInput=false;
         }
+    }
+
+    public void UseSpaceInput()
+    {
+        JumpInput=false;
     }
 }
