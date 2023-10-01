@@ -7,9 +7,14 @@ public class SliderController : MonoBehaviour
 {
     enum OperationType
     {
+        //角色移动相关
         MoveLeft,
         MoveRight,
         Jump,
+        //条移动相关
+        Invert,
+        Replay,
+
         None,
     }
 
@@ -50,6 +55,8 @@ public class SliderController : MonoBehaviour
 
     PlayerInputHandler inputHandler;
 
+    bool inverted=false,replayed=false;
+
     [SerializeField]
     float pointerMoveSpeed;
 
@@ -74,7 +81,7 @@ public class SliderController : MonoBehaviour
     void Update()
     {
         //UpdateFiller();
-        CheckSpaceDoubleTap();
+        //CheckSpaceDoubleTap();
         UpdatePointer();
         CheckSpacePress();
     }
@@ -183,6 +190,12 @@ public class SliderController : MonoBehaviour
 
     void ApplyOperation(OperationType op1,OperationType op2)
     {
+        if(op1==op2 && op2==OperationType.None)
+        {
+            replayed=inverted=false;
+        }
+
+        //角色移动相关
         Vector2 moveDir=Vector2.zero;
         bool jump=false;
 
@@ -203,5 +216,38 @@ public class SliderController : MonoBehaviour
         inputHandler.OnMoveInput(moveDir);
         if(jump)
             inputHandler.OnJumpInput();
+
+        //条移动相关
+        bool replay=false;
+        bool invert=false;
+        if(op1==OperationType.Replay)
+            replay=true;
+        else if(op1==OperationType.Invert)
+            invert=true;
+        if(op2==OperationType.Replay)
+            replay=true;
+        else if(op2==OperationType.Invert)
+            invert=true;
+        if(replay && !replayed)
+        {
+            replayed=true;
+            PointerReplay();
+        }
+        if(invert && !inverted)
+        {
+            inverted=true;
+            PointerInvert();
+        }
+    }
+
+    void PointerReplay()
+    {
+        pointerRect.anchoredPosition=new Vector2(0,pointerRect.anchoredPosition.y);
+        pointerMovingRight=true;
+    }
+
+    void PointerInvert()
+    {
+        pointerMovingRight=!pointerMovingRight;
     }
 }

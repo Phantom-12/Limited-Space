@@ -820,22 +820,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f6ffc508-2353-4e22-91d4-003985258b24
     m_ActionName: Player/Space[/Keyboard/c]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 605633033}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnSpaceDoubleTapInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 86dbd86f-8696-427a-ad5d-b854edaa835f
-    m_ActionName: Player/SpaceDoubleTap[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1423,10 +1407,20 @@ MonoBehaviour:
     operation: 2
     color: {r: 1, g: 1, b: 1, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
+    indicatorSprite: {fileID: 0}
+    length: 2
+    operation: 3
+    color: {r: 1, g: 0.7477317, b: 0, a: 1}
+  - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
+    indicatorSprite: {fileID: 0}
+    length: 2
+    operation: 4
+    color: {r: 0, g: 1, b: 0, a: 1}
+  - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
     length: 1
     operation: 1
-    color: {r: 0, g: 1, b: 0, a: 1}
+    color: {r: 1, g: 0, b: 0.80211735, a: 1}
   fillerPrefab: {fileID: 601957082698176899, guid: 1f1507cf8e8d890419f28e8d96d6629e, type: 3}
   indicatorPrefab: {fileID: 7071296383980639735, guid: db8619be16b0fc443a120b68b04d6d02, type: 3}
   pointerMoveSpeed: 300
