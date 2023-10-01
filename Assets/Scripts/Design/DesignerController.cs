@@ -33,11 +33,13 @@ public class DesignerController : MonoBehaviour
     struct ActionInfo
     {
         [SerializeField]
-        [Tooltip("距离上次动作的时间间隔数")]
+        [Tooltip("距离开始的时间间隔数")]
         public int beatsGap;
         [SerializeField]
         [Tooltip("操作类型（按下/松开/生成块）")]
         public DevType operation;
+        [Tooltip("注释")]
+        public string comment;
     }
     
     [SerializeField]
@@ -77,7 +79,7 @@ public class DesignerController : MonoBehaviour
     {
         if(onDev){
             while(ActionCount<Actions.Length){
-                if(beatCount==Actions[ActionCount].beatsGap){
+                if(beatCount>=Actions[ActionCount].beatsGap){
                     if(Actions[ActionCount].operation==DevType.SpacePressed){
                         inputHandler.OnSpaceHoldDev(true);
                     }else if(Actions[ActionCount].operation==DevType.SpaceRelease){
@@ -86,7 +88,6 @@ public class DesignerController : MonoBehaviour
                         GenerateBlock();
                     }
                     ActionCount++;
-                    beatCount=0;
                 }else{
                     beatCount++;
                     break;
