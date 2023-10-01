@@ -13,22 +13,31 @@ public class DesignerController : MonoBehaviour
     [SerializeField]
     private bool onDev;
     [SerializeField]
-    private float beatTimeLength;
+    [Tooltip("循环执行的时间间隔")]
+    private float TimeLength;
 
     private int beatCount;
     private int ActionCount;
     private PlayerInputHandler inputHandler;
     private bool started;
 
+    private enum DevType
+    {
+        None,
+        SpacePressed,
+        SpaceRelease,
+        GenerateBlock,
+    }
+
     [System.Serializable]
     struct ActionInfo
     {
         [SerializeField]
-        [Tooltip("距离上次动作的节拍数")]
+        [Tooltip("距离上次动作的时间间隔数")]
         public int beatsGap;
         [SerializeField]
         [Tooltip("操作类型（按下/松开/生成块）")]
-        public int type;
+        public DevType operation;
     }
     
     [SerializeField]
@@ -53,14 +62,14 @@ public class DesignerController : MonoBehaviour
     public void StartTest(InputAction.CallbackContext context)
     {
         if(onDev && context.performed && !started){
-            InvokeRepeating("Check", 0.0f, beatTimeLength);
+            InvokeRepeating("Check", 0.0f, TimeLength);
             started=true;
         }
     }
 
     public void StartTest()
     {
-        InvokeRepeating("Check", 0.0f, beatTimeLength);
+        InvokeRepeating("Check", 0.0f, TimeLength);
         started=true;
     }
 
@@ -69,11 +78,11 @@ public class DesignerController : MonoBehaviour
         if(onDev){
             while(ActionCount<Actions.Length){
                 if(beatCount==Actions[ActionCount].beatsGap){
-                    if(Actions[ActionCount].type==1){
+                    if(Actions[ActionCount].operation==DevType.SpacePressed){
                         inputHandler.OnSpaceHoldDev(true);
-                    }else if(Actions[ActionCount].type==2){
+                    }else if(Actions[ActionCount].operation==DevType.SpaceRelease){
                         inputHandler.OnSpaceHoldDev(false);
-                    }else if(Actions[ActionCount].type==3){
+                    }else if(Actions[ActionCount].operation==DevType.GenerateBlock){
                         GenerateBlock();
                     }
                     ActionCount++;
