@@ -7,6 +7,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerInput playerInput;
     public Vector2 RawMovementInput{get;private set;}
+    public Vector2 MovementInput{get;private set;}
     public int NormInputX{get;private set;}
     public int NormInputY{get;private set;}
     public bool JumpInput{get;private set;}
@@ -32,6 +33,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         RawMovementInput=context.ReadValue<Vector2>();
+        MovementInput=RawMovementInput.normalized;
         NormInputX=(int)(RawMovementInput.x*Vector2.right).normalized.x;
         NormInputY=(int)(RawMovementInput.y*Vector2.up).normalized.y;
     }
@@ -76,6 +78,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMoveInput(Vector2 Input)
     {
         RawMovementInput=Input;
+        MovementInput=RawMovementInput.normalized;
         NormInputX=(int)(RawMovementInput.x*Vector2.right).normalized.x;
         NormInputY=(int)(RawMovementInput.y*Vector2.up).normalized.y;
     }

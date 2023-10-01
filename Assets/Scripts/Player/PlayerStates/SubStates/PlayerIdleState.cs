@@ -29,7 +29,11 @@ public class PlayerIdleState : PlayerGroundedState
         base.LogicUpdate();
         if(!hasExited)
         {
-            if(player.InputHandler.NormInputX!=0f)
+            // if(player.InputHandler.NormInputX!=0f)
+            // {
+            //     stateMachine.ChangeState(player.MoveState);
+            // }
+            if(player.InputHandler.MovementInput!=Vector2.zero)
             {
                 stateMachine.ChangeState(player.MoveState);
             }
