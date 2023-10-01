@@ -11,6 +11,8 @@ public class SliderController : MonoBehaviour
         MoveLeft,
         MoveRight,
         MoveUp,
+        JumpLeft,
+        JumpRight,
         Jump,
         //条移动相关
         Invert,
@@ -158,31 +160,43 @@ public class SliderController : MonoBehaviour
     {
         if(!inputHandler.SpaceHoldInput)
         {
-            ApplyOperation(OperationType.None,OperationType.None);
+            // ApplyOperation(OperationType.None,OperationType.None);
+            ApplyOperation(OperationType.None);
             return;
         }
         if(replayed)
             return;
-        float leftPos=pointerRect.anchoredPosition.x;
-        float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
-        OperationType leftOp=OperationType.None,rightOp=OperationType.None;
+        // float leftPos=pointerRect.anchoredPosition.x;
+        // float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
+        // OperationType leftOp=OperationType.None,rightOp=OperationType.None;
+        // foreach(var i in opList)
+        // {
+        //     if(leftPos<i.Key+0.5f)
+        //     {
+        //         leftOp=i.Value;
+        //         break;
+        //     }
+        // }
+        // foreach(var i in opList)
+        // {
+        //     if(rightPos<i.Key+0.5f)
+        //     {
+        //         rightOp=i.Value;
+        //         break;
+        //     }
+        // }
+        // ApplyOperation(leftOp,rightOp);
+        float midPos=pointerRect.anchoredPosition.x+pointerWidth/2;
+        OperationType midOp=OperationType.None;
         foreach(var i in opList)
         {
-            if(leftPos<i.Key+0.5f)
+            if(midPos<i.Key+0.5f)
             {
-                leftOp=i.Value;
+                midOp=i.Value;
                 break;
             }
         }
-        foreach(var i in opList)
-        {
-            if(rightPos<i.Key+0.5f)
-            {
-                rightOp=i.Value;
-                break;
-            }
-        }
-        ApplyOperation(leftOp,rightOp);
+        ApplyOperation(midOp);
     }
 
     void CheckSpaceDoubleTap()
@@ -249,6 +263,71 @@ public class SliderController : MonoBehaviour
             replay=true;
         else if(op2==OperationType.Invert)
             invert=true;
+        if(replay && !replayed)
+        {
+            replayed=true;
+            PointerReplay();
+        }
+        if(invert && !inverted)
+        {
+            inverted=true;
+            PointerInvert();
+        }
+    }
+
+    void ApplyOperation(OperationType op)
+    {
+        if(op==OperationType.Die)
+        {
+            //死亡相关逻辑
+        }
+        //松手之后replay和invert都可以再次执行
+        //invert出去之后可以再次执行
+        //replay仅松手后可以再次执行
+        if(op==OperationType.None)
+        {
+            replayed=inverted=false;
+        }
+        if(op!=OperationType.Invert)
+        {
+            inverted=false;
+        }
+        
+        //角色移动相关
+        Vector2 moveDir=Vector2.zero;
+        bool jump=false;
+
+        if(op==OperationType.MoveLeft)
+            moveDir+=Vector2.left;
+        else if(op==OperationType.MoveRight)
+            moveDir+=Vector2.right;
+        else if(op==OperationType.MoveUp)
+            moveDir+=Vector2.up;
+        else if(op==OperationType.Jump)
+            jump=true;
+        else if(op==OperationType.JumpLeft)
+        {
+            jump=true;
+            moveDir+=Vector2.left;
+        }
+        else if(op==OperationType.JumpRight)
+        {
+            jump=true;
+            moveDir+=Vector2.right;
+        }
+
+        inputHandler.OnMoveInput(moveDir);
+        if(jump)
+            inputHandler.OnJumpInput();
+
+        //条移动相关
+        bool replay=false;
+        bool invert=false;
+        if(op==OperationType.Replay)
+            replay=true;
+        else if(op==OperationType.Invert)
+            invert=true;
+
         if(replay && !replayed)
         {
             replayed=true;
