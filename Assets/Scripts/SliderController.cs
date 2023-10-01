@@ -140,14 +140,14 @@ public class SliderController : MonoBehaviour
     {
         if(pointerMovingRight)
         {
-            float newX=pointerRect.anchoredPosition.x+pointerMoveSpeed*Time.deltaTime;
+            float newX=pointerRect.anchoredPosition.x+pointerMoveSpeed*(fillingAreaRect.rect.width-pointerRect.rect.width)/.8f*Time.deltaTime;
             pointerRect.anchoredPosition=new Vector2(newX,pointerRect.anchoredPosition.y);
             if(newX+pointerWidth>fillingAreaRect.rect.width)
                 pointerMovingRight=false;
         }
         else
         {
-            float newX=pointerRect.anchoredPosition.x-pointerMoveSpeed*Time.deltaTime;
+            float newX=pointerRect.anchoredPosition.x-pointerMoveSpeed*(fillingAreaRect.rect.width-pointerRect.rect.width)/.8f*Time.deltaTime;
             pointerRect.anchoredPosition=new Vector2(newX,pointerRect.anchoredPosition.y);
             if(newX<0)
                 pointerMovingRight=true;

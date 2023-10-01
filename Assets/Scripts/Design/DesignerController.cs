@@ -40,6 +40,8 @@ public class DesignerController : MonoBehaviour
         beatCount=0;
         ActionCount=0;
         inputHandler=Player.GetComponent<PlayerInputHandler>();
+        if(onDev)
+            StartTest();
     }
 
     // Update is called once per frame
@@ -54,6 +56,12 @@ public class DesignerController : MonoBehaviour
             InvokeRepeating("Check", 0.0f, beatTimeLength);
             started=true;
         }
+    }
+
+    public void StartTest()
+    {
+        InvokeRepeating("Check", 0.0f, beatTimeLength);
+        started=true;
     }
 
     public void Check()

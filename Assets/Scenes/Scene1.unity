@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86671079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6956193, y: 1.1922723, z: -10}
+  m_LocalPosition: {x: 0.6956193, y: 0.53, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -457,8 +457,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180358302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -2.45, z: -0.025194846}
-  m_LocalScale: {x: 16.6267, y: 1, z: 1}
+  m_LocalPosition: {x: 82.5845, y: -2.45, z: -0.025194846}
+  m_LocalScale: {x: 181.81415, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1259195683}
@@ -672,7 +672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605633029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6956193, y: 1.1922723, z: 0}
+  m_LocalPosition: {x: 0.6956193, y: 0.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1368,7 +1368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087484876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6956193, y: 1.1922723, z: -10}
+  m_LocalPosition: {x: 0.6956193, y: 0.53, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1682,8 +1682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00024032593}
-  m_SizeDelta: {x: 26.7004, y: 0.0005188}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 21.2, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1644001242
 MonoBehaviour:
@@ -1853,33 +1853,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillerInfos:
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: 006b791780128374d8bbfb8f478a0f9d, type: 3}
-    length: 1
-    operation: 0
+    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    length: 52.5
+    operation: 1
     color: {r: 1, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: 13e3bdfc2e3fdd344b065e5d309fc8c4, type: 3}
-    length: 2
+    length: 17.7
     operation: 2
     color: {r: 1, g: 1, b: 1, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 0}
-    length: 2
-    operation: 4
-    color: {r: 1, g: 0.7477317, b: 0, a: 1}
-  - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 0}
-    length: 2
-    operation: 5
-    color: {r: 0, g: 1, b: 0, a: 1}
-  - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 1
+    length: 29.8
     operation: 1
-    color: {r: 1, g: 0, b: 0.80211735, a: 1}
+    color: {r: 1, g: 0, b: 0, a: 1}
   fillerPrefab: {fileID: 601957082698176899, guid: 1f1507cf8e8d890419f28e8d96d6629e, type: 3}
   indicatorPrefab: {fileID: 7071296383980639735, guid: db8619be16b0fc443a120b68b04d6d02, type: 3}
-  pointerMoveSpeed: 0.5
+  pointerMoveSpeed: 0.16666666
 --- !u!1 &2037511621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,16 +1906,12 @@ MonoBehaviour:
   Actions:
   - beatsGap: 0
     type: 1
-  - beatsGap: 4
-    type: 2
-  - beatsGap: 0
-    type: 3
-  - beatsGap: 5
-    type: 1
   - beatsGap: 3
-    type: 2
-  - beatsGap: 0
     type: 3
+  - beatsGap: 2
+    type: 3
+  - beatsGap: 0
+    type: 2
 --- !u!4 &2037511623
 Transform:
   m_ObjectHideFlags: 0
