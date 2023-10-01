@@ -66,6 +66,20 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnSpaceHoldDev(bool state)
+    {
+        if(state)
+        {
+            // Debug.Log("长按");
+            SpaceHoldInput=true;
+        }
+        else if(!state)
+        {
+            // Debug.Log("长按cancel");
+            SpaceHoldInput=false;
+        }
+    }
+
     public void OnSpaceDoubleTapInput(InputAction.CallbackContext context)
     {
         if(context.performed)

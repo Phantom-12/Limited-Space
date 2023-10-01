@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine.InputSystem;
-
 public class Player : MonoBehaviour
 {
     #region State Machine Variables 状态机变量
@@ -34,10 +32,6 @@ public class Player : MonoBehaviour
     #region Other Variables 其他变量
     public int FacingDirection{get;private set;}
     private Vector2 workspace;
-    [SerializeField]
-    public GameObject BlockPrefeb;
-    [SerializeField]
-    private bool onDesign;
     #endregion
 
     #region Unity Callback Functions unity回调函数 
@@ -138,15 +132,6 @@ public class Player : MonoBehaviour
     public void OnDrawGizmos()
     {
         //Debug.DrawRay(wallCheckPoint.position,Vector2.right*FacingDirection*playerData.wallCheckDistance,Color.blue);
-    }
-
-    public void GenerateBlock(InputAction.CallbackContext context)
-    {
-        if(context.performed && onDesign){
-            Vector3 blockPosition=transform.position;
-            blockPosition.y-=(GetComponent<BoxCollider2D>().size.y/2+BlockPrefeb.GetComponent<BoxCollider2D>().size.y/2);
-            Instantiate(BlockPrefeb,blockPosition,Quaternion.identity);
-        }
     }
     #endregion
 }
