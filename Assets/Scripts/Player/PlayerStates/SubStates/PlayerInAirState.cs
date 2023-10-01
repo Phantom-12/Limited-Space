@@ -69,7 +69,8 @@ public class PlayerInAirState : PlayerState
         base.PhysicsUpdate();
         
         xInput=player.InputHandler.NormInputX;
-        player.SetVelocityX(playerData.movementVelocity*xInput);
+        if(xInput!=0)
+            player.SetVelocityX(playerData.movementVelocity*xInput);
         player.Anim.SetFloat("xVelocity",Mathf.Abs(player.Rb.velocity.x));
         player.Anim.SetFloat("yVelocity",player.Rb.velocity.y);
     }
