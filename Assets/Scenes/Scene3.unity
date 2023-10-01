@@ -896,6 +896,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &618978094
 GameObject:
   m_ObjectHideFlags: 3
@@ -2866,7 +2867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockPrefeb: {fileID: 487893830659524053, guid: d46ecc0e5ff72e0429eb5d3cee51ab4b, type: 3}
   Player: {fileID: 605633029}
-  onDev: 0
+  onDev: 1
   TimeLength: 0.1
   Actions:
   - beatsGap: 0
