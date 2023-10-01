@@ -10,6 +10,7 @@ public class SliderController : MonoBehaviour
         //角色移动相关
         MoveLeft,
         MoveRight,
+        MoveUp,
         Jump,
         //条移动相关
         Invert,
@@ -158,6 +159,8 @@ public class SliderController : MonoBehaviour
             ApplyOperation(OperationType.None,OperationType.None);
             return;
         }
+        if(replayed)
+            return;
         float leftPos=pointerRect.anchoredPosition.x;
         float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
         OperationType leftOp=OperationType.None,rightOp=OperationType.None;
@@ -203,6 +206,8 @@ public class SliderController : MonoBehaviour
             moveDir+=Vector2.left;
         else if(op1==OperationType.MoveRight)
             moveDir+=Vector2.right;
+        else if(op1==OperationType.MoveUp)
+            moveDir+=Vector2.up;
         else if(op1==OperationType.Jump)
             jump=true;
 
@@ -210,6 +215,8 @@ public class SliderController : MonoBehaviour
             moveDir+=Vector2.left;
         else if(op2==OperationType.MoveRight)
             moveDir+=Vector2.right;
+        else if(op2==OperationType.MoveUp)
+            moveDir+=Vector2.up;
         else if(op2==OperationType.Jump)
             jump=true;
 

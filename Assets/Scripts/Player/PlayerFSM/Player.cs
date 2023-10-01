@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     #region Other Variables 其他变量
     public int FacingDirection{get;private set;}
     private Vector2 workspace;
+    [SerializeField]
+    public GameObject BlockPrefeb;
     #endregion
 
     #region Unity Callback Functions unity回调函数 
