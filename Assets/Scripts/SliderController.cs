@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
+using System.ComponentModel;
 using UnityEngine;
 
 public class SliderController : MonoBehaviour
@@ -17,12 +17,17 @@ public class SliderController : MonoBehaviour
     struct FillerInfo
     {
         [SerializeField]
-        public Sprite sprite;
+        [Tooltip("填充区域的sprite")]
+        public Sprite fillerSprite;
+        [SerializeField]
+        [Tooltip("指示器的sprite")]
+        public Sprite indicatorSprite;
         [SerializeField]
         public float length;
         [SerializeField]
         public OperationType operation;
         [SerializeField]
+        [Tooltip("填充区域的颜色")]
         public Color color;
     }
 
@@ -31,12 +36,14 @@ public class SliderController : MonoBehaviour
     [SerializeField]
     GameObject fillerPrefab;
     GameObject[] fillers;
+    [SerializeField]
+    GameObject indicatorPrefab;
+    GameObject[] indicators;
 
     Dictionary<float,OperationType> opList;
 
-
-    Transform fillingArea;
     RectTransform fillingAreaRect;
+    RectTransform indicatorAreaRect;
     RectTransform pointerRect;
     float pointerWidth;
     bool pointerMovingRight;
@@ -48,16 +55,16 @@ public class SliderController : MonoBehaviour
 
     void Awake()
     {
-        fillingArea=transform.Find("Fill Area");
-        fillingAreaRect=fillingArea.gameObject.GetComponent<RectTransform>();
-        pointerRect=transform.Find("Pointer").gameObject.GetComponent<RectTransform>();
+        fillingAreaRect=transform.Find("Fill Area").gameObject.GetComponent<RectTransform>();
+        indicatorAreaRect=transform.Find("Indicator Area").gameObject.GetComponent<RectTransform>();
+        pointerRect=transform.Find("Fill Area/Pointer").gameObject.GetComponent<RectTransform>();
         inputHandler=FindObjectOfType<PlayerInputHandler>();
         pointerWidth=pointerRect.rect.width;
         opList=new Dictionary<float, OperationType>();
 
         InitFillers();
         InitPointer();
-        UpdateFiller();
+        UpdateFillerAndIndicator();
     }
 
     void Start()
@@ -75,16 +82,21 @@ public class SliderController : MonoBehaviour
     void InitFillers()
     {
         fillers=new GameObject[fillerInfos.Length];
+        indicators=new GameObject[fillerInfos.Length];
         for(int i=0;i<fillerInfos.Length;i++)
         {
-            fillers[i]=Instantiate(fillerPrefab,fillingArea);
-            fillers[i].GetComponent<UnityEngine.UI.Image>().sprite=fillerInfos[i].sprite;
+            fillers[i]=Instantiate(fillerPrefab,fillingAreaRect);
+            fillers[i].GetComponent<UnityEngine.UI.Image>().sprite=fillerInfos[i].fillerSprite;
             fillers[i].GetComponent<UnityEngine.UI.Image>().color=fillerInfos[i].color;
+            indicators[i]=Instantiate(indicatorPrefab,indicatorAreaRect);
+            indicators[i].GetComponent<UnityEngine.UI.Image>().sprite=fillerInfos[i].indicatorSprite;
+            indicators[i].GetComponent<UnityEngine.UI.Image>().preserveAspect=true;
         }
-        UpdateFiller();
+        UpdateFillerAndIndicator();
+        
     }
 
-    void UpdateFiller()
+    void UpdateFillerAndIndicator()
     {
         float width=fillingAreaRect.rect.width;
         float height=fillingAreaRect.rect.height;
@@ -101,6 +113,7 @@ public class SliderController : MonoBehaviour
             fillers[i].GetComponent<RectTransform>().offsetMin=new Vector2(nowX,0);
             fillers[i].GetComponent<RectTransform>().offsetMax=new Vector2(nowX+fillerWidth,fillerHeight);
             // fillers[i].GetComponent<RectTransform>().anchoredPosition=new Vector2(nowX,0);
+            indicators[i].GetComponent<RectTransform>().anchoredPosition=new Vector2((2*nowX+fillerWidth)/2,0);
             nowX+=fillerWidth;
             opList.TryAdd(nowX,fillerInfos[i].operation);
         }
@@ -110,6 +123,7 @@ public class SliderController : MonoBehaviour
     {
         pointerRect.anchoredPosition=new Vector2(0,0);
         pointerMovingRight=true;
+        pointerRect.SetAsLastSibling();
     }
 
     void UpdatePointer()
@@ -134,16 +148,17 @@ public class SliderController : MonoBehaviour
     {
         if(!inputHandler.SpaceHoldInput)
         {
-            ApplyOperation(OperationType.None);
+            ApplyOperation(OperationType.None,OperationType.None);
             return;
         }
         float leftPos=pointerRect.anchoredPosition.x;
         float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
+        OperationType leftOp=OperationType.None,rightOp=OperationType.None;
         foreach(var i in opList)
         {
             if(leftPos<i.Key+0.5f)
             {
-                ApplyOperation(i.Value);
+                leftOp=i.Value;
                 break;
             }
         }
@@ -151,10 +166,11 @@ public class SliderController : MonoBehaviour
         {
             if(rightPos<i.Key+0.5f)
             {
-                ApplyOperation(i.Value);
+                rightOp=i.Value;
                 break;
             }
         }
+        ApplyOperation(leftOp,rightOp);
     }
 
     void CheckSpaceDoubleTap()
@@ -165,15 +181,27 @@ public class SliderController : MonoBehaviour
         inputHandler.UseSpaceDoubleTapInput();
     }
 
-    void ApplyOperation(OperationType op)
+    void ApplyOperation(OperationType op1,OperationType op2)
     {
-        if(op==OperationType.MoveLeft)
-            inputHandler.OnMoveInput(Vector2.left);
-        else if(op==OperationType.MoveRight)
-            inputHandler.OnMoveInput(Vector2.right);
-        else if(op==OperationType.Jump)
+        Vector2 moveDir=Vector2.zero;
+        bool jump=false;
+
+        if(op1==OperationType.MoveLeft)
+            moveDir+=Vector2.left;
+        else if(op1==OperationType.MoveRight)
+            moveDir+=Vector2.right;
+        else if(op1==OperationType.Jump)
+            jump=true;
+
+        if(op2==OperationType.MoveLeft)
+            moveDir+=Vector2.left;
+        else if(op2==OperationType.MoveRight)
+            moveDir+=Vector2.right;
+        else if(op2==OperationType.Jump)
+            jump=true;
+
+        inputHandler.OnMoveInput(moveDir);
+        if(jump)
             inputHandler.OnJumpInput();
-        else if(op==OperationType.None)
-            inputHandler.OnMoveInput(Vector2.zero);
     }
 }
