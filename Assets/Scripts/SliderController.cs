@@ -16,6 +16,8 @@ public class SliderController : MonoBehaviour
         Invert,
         Replay,
 
+        //其他
+        Die,
         None,
     }
 
@@ -193,10 +195,22 @@ public class SliderController : MonoBehaviour
 
     void ApplyOperation(OperationType op1,OperationType op2)
     {
+        if(op1==OperationType.Die || op2==OperationType.Die)
+        {
+            //死亡相关逻辑
+        }
+        //松手之后replay和invert都可以再次执行
+        //invert出去之后可以再次执行
+        //replay仅松手后可以再次执行
         if(op1==op2 && op2==OperationType.None)
         {
             replayed=inverted=false;
         }
+        if(op1!=OperationType.Invert && op2!=OperationType.Invert)
+        {
+            inverted=false;
+        }
+        
 
         //角色移动相关
         Vector2 moveDir=Vector2.zero;
