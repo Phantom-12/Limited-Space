@@ -1755,44 +1755,39 @@ MonoBehaviour:
   fillerInfos:
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 5
+    length: 6
     operation: 8
     color: {r: 0, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: 13e3bdfc2e3fdd344b065e5d309fc8c4, type: 3}
-    length: 20
+    length: 16
     operation: 2
     color: {r: 1, g: 1, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 5
+    length: 6
     operation: 8
     color: {r: 0, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 20
+    length: 24
     operation: 2
     color: {r: 1, g: 1, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 5
+    length: 6
     operation: 8
     color: {r: 0, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 10
+    length: 12
     operation: 7
     color: {r: 0, g: 1, b: 1, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 20
+    length: 25
     operation: 0
     color: {r: 0, g: 1, b: 0, a: 1}
-  - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
-    length: 10
-    operation: 7
-    color: {r: 0, g: 1, b: 1, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
     indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
     length: 5
