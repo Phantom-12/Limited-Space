@@ -3437,7 +3437,7 @@ MonoBehaviour:
     operation: 2
     comment: 
   - beatsGap: 28
-    operation: 3
+    operation: 0
     comment: "\u51FA\u53BB"
 --- !u!4 &2037511623
 Transform:
