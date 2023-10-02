@@ -96,7 +96,7 @@ public class SceneController : MonoBehaviour
 
     public void ToNextScene()
     {
-        if(SceneManager.GetActiveScene().buildIndex+1>=SceneManager.sceneCount)
+        if(SceneManager.GetActiveScene().buildIndex+1>=SceneManager.sceneCountInBuildSettings)
             return;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         Pause(false);
@@ -104,7 +104,7 @@ public class SceneController : MonoBehaviour
 
     public void ToStartScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("ChooseLevel");
         Pause(false);
     }
 }
