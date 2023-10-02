@@ -302,9 +302,7 @@ public class SliderController : MonoBehaviour
         if(op==OperationType.Die && lastOp!=OperationType.Die && lastOp!=OperationType.Replay)
         {
             //死亡相关逻辑
-            Debug.Log("DEATH");
-            Debug.Log(lastOp);
-            Debug.Break();
+            FindObjectOfType<Player>().Die();
         }
         //松手之后replay和invert都可以再次执行
         //invert出去之后可以再次执行

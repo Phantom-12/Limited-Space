@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     #region Other Variables 其他变量
     public int FacingDirection{get;private set;}
     private Vector2 workspace;
+    private bool pause=false;
     #endregion
 
     #region Unity Callback Functions unity回调函数 
@@ -60,11 +61,15 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(pause)
+            return ;
         StateMachine.CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
+        if(pause)
+            return ;
         StateMachine.CurrentState.PhysicsUpdate();
     }
     #endregion
@@ -132,6 +137,18 @@ public class Player : MonoBehaviour
     public void OnDrawGizmos()
     {
         //Debug.DrawRay(wallCheckPoint.position,Vector2.right*FacingDirection*playerData.wallCheckDistance,Color.blue);
+    }
+
+    public void Die()
+    {
+        Pause();
+        Rb.velocity=Vector2.zero;
+        Anim.SetBool("die",true);
+    }
+
+    public void Pause()
+    {
+        pause=true;
     }
     #endregion
 }
