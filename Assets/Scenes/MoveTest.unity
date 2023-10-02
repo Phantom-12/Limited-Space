@@ -1902,20 +1902,26 @@ MonoBehaviour:
   BlockPrefeb: {fileID: 487893830659524053, guid: d46ecc0e5ff72e0429eb5d3cee51ab4b, type: 3}
   Player: {fileID: 605633029}
   onDev: 0
-  beatTimeLength: 0.8
+  TimeLength: 0
   Actions:
   - beatsGap: 0
-    type: 1
+    operation: 0
+    comment: 
   - beatsGap: 4
-    type: 2
+    operation: 0
+    comment: 
   - beatsGap: 0
-    type: 3
+    operation: 0
+    comment: 
   - beatsGap: 5
-    type: 1
+    operation: 0
+    comment: 
   - beatsGap: 3
-    type: 2
+    operation: 0
+    comment: 
   - beatsGap: 0
-    type: 3
+    operation: 0
+    comment: 
 --- !u!4 &2037511623
 Transform:
   m_ObjectHideFlags: 0

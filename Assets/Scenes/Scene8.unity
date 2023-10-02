@@ -178,7 +178,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86671079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6956193, y: 0.53, z: -10}
+  m_LocalPosition: {x: 1.7, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1420,7 +1420,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &618978094
 GameObject:
   m_ObjectHideFlags: 3
@@ -1467,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 1.0043807, y: 2.47, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1861,6 +1860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806748881}
   - component: {fileID: 806748880}
+  - component: {fileID: 806748882}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1879,7 +1879,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 28ecd181528718c489a42612b96f3fc7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -1979,6 +1979,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806748882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806748879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b274e45c5ff218a449c48ac2077cc6e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857113106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,10 +2158,10 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 605633032}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2173,7 +2185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087484876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6956193, y: 0.53, z: -10}
+  m_LocalPosition: {x: 1.7, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3331,32 +3343,32 @@ MonoBehaviour:
     operation: 1
     color: {r: 1, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: 13e3bdfc2e3fdd344b065e5d309fc8c4, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 7f7b8236b98d40c4c8c1f394be1b21fc, type: 3}
     length: 20
     operation: 8
     color: {r: 0, g: 0, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 78c83212d2a8f0b4e9b525a60d873c1b, type: 3}
     length: 10
     operation: 6
     color: {r: 0.9490197, g: 0, b: 0.9490197, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 006b791780128374d8bbfb8f478a0f9d, type: 3}
     length: 10
     operation: 0
     color: {r: 0, g: 0.9568628, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 13e3bdfc2e3fdd344b065e5d309fc8c4, type: 3}
     length: 10
     operation: 2
     color: {r: 1, g: 1, b: 0, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: f910e1e88ff8d7447a9ec553c7ab0f35, type: 3}
     length: 20
     operation: 7
     color: {r: 0, g: 1, b: 1, a: 1}
   - fillerSprite: {fileID: 7482667652216324306, guid: 019a6700ef1414842a686a4fea6a9f31, type: 3}
-    indicatorSprite: {fileID: 21300000, guid: e222d1d091668314dbaebb6f7afc143d, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 13e3bdfc2e3fdd344b065e5d309fc8c4, type: 3}
     length: 10
     operation: 2
     color: {r: 1, g: 1, b: 0, a: 1}
@@ -3399,7 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockPrefeb: {fileID: 487893830659524053, guid: d46ecc0e5ff72e0429eb5d3cee51ab4b, type: 3}
   Player: {fileID: 605633029}
-  onDev: 1
+  onDev: 0
   TimeLength: 0.1
   Actions:
   - beatsGap: 20

@@ -61,9 +61,13 @@ public class SliderController : MonoBehaviour
     PlayerInputHandler inputHandler;
 
     bool inverted=false,replayed=false;
+    [SerializeField]
+    bool start;
 
     [SerializeField]
     float pointerMoveSpeed;
+
+    OperationType lastOp=OperationType.Die;
 
     void Awake()
     {
@@ -87,7 +91,8 @@ public class SliderController : MonoBehaviour
     {
         //UpdateFiller();
         //CheckSpaceDoubleTap();
-        UpdatePointer();
+        if(start)
+            UpdatePointer();
         CheckSpacePress();
     }
 
@@ -164,8 +169,9 @@ public class SliderController : MonoBehaviour
             ApplyOperation(OperationType.None);
             return;
         }
-        if(replayed)
-            return;
+        start=true;
+        // if(replayed)
+        //     return;
         // float leftPos=pointerRect.anchoredPosition.x;
         // float rightPos=pointerRect.anchoredPosition.x+pointerWidth;
         // OperationType leftOp=OperationType.None,rightOp=OperationType.None;
@@ -277,9 +283,12 @@ public class SliderController : MonoBehaviour
 
     void ApplyOperation(OperationType op)
     {
-        if(op==OperationType.Die)
+        if(op==OperationType.Die && lastOp!=OperationType.Die && lastOp!=OperationType.Replay)
         {
             //死亡相关逻辑
+            Debug.Log("DEATH");
+            Debug.Log(lastOp);
+            Debug.Break();
         }
         //松手之后replay和invert都可以再次执行
         //invert出去之后可以再次执行
@@ -291,6 +300,10 @@ public class SliderController : MonoBehaviour
         if(op!=OperationType.Invert)
         {
             inverted=false;
+        }
+        if(op!=OperationType.Replay)
+        {
+            replayed=false;
         }
         
         //角色移动相关
@@ -338,6 +351,8 @@ public class SliderController : MonoBehaviour
             inverted=true;
             PointerInvert();
         }
+        if(!(lastOp==OperationType.Die && op==OperationType.None))
+            lastOp=op;
     }
 
     void PointerReplay()
