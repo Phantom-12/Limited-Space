@@ -7,6 +7,6 @@ public class PlayerDieTeller : MonoBehaviour
 
     public void PlayerDie()
     {
-        FindObjectOfType<SceneManager>().LevelFailed();
+        FindObjectOfType<SceneController>().LevelFailed();
     }
 }

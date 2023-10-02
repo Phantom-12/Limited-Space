@@ -19,10 +19,13 @@ public class PlayerInputHandler : MonoBehaviour
     private float inputHoldTime;
     private float jumpStartTime;
 
+    SceneController sceneManager;
+
 
     private void Start()
     {
         playerInput=GetComponent<PlayerInput>();
+        sceneManager=FindObjectOfType<SceneController>();
     }
 
     private void Update()
@@ -32,6 +35,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        if(sceneManager.Pausing)
+            return;
         RawMovementInput=context.ReadValue<Vector2>();
         MovementInput=RawMovementInput.normalized;
         NormInputX=(int)(RawMovementInput.x*Vector2.right).normalized.x;
@@ -40,6 +45,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
+        if(sceneManager.Pausing)
+            return;
         if(context.performed)
         {
             JumpInput=true;
@@ -54,6 +61,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceHoldInput(InputAction.CallbackContext context)
     {
+        if(sceneManager.Pausing)
+            return;
         if(context.performed)
         {
             // Debug.Log("长按");
@@ -68,6 +77,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceHoldDev(bool state)
     {
+        if(sceneManager.Pausing)
+            return;
         if(state)
         {
             // Debug.Log("长按");
@@ -82,6 +93,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceDoubleTapInput(InputAction.CallbackContext context)
     {
+        if(sceneManager.Pausing)
+            return;
         if(context.performed)
         {
             // Debug.Log("双击");
@@ -91,6 +104,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMoveInput(Vector2 Input)
     {
+        if(sceneManager.Pausing)
+            return;
         RawMovementInput=Input;
         MovementInput=RawMovementInput.normalized;
         NormInputX=(int)(RawMovementInput.x*Vector2.right).normalized.x;
@@ -99,6 +114,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJumpInput()
     {
+        if(sceneManager.Pausing)
+            return;
         JumpInput=true;
         JumpInputStop=false;
         jumpStartTime=Time.time;
