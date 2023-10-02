@@ -3,42 +3,53 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
+public enum OperationType
+{
+    //角色移动相关
+    MoveLeft,
+    MoveRight,
+    MoveUp,
+    JumpLeft,
+    JumpRight,
+    Jump,
+    //条移动相关
+    Invert,
+    Replay,
+
+    //其他
+    Die,
+    None,
+}
+
 public class SliderController : MonoBehaviour
 {
-    enum OperationType
-    {
-        //角色移动相关
-        MoveLeft,
-        MoveRight,
-        MoveUp,
-        JumpLeft,
-        JumpRight,
-        Jump,
-        //条移动相关
-        Invert,
-        Replay,
 
-        //其他
-        Die,
-        None,
-    }
+    // [System.Serializable]
+    // struct GlobalFillerInfo
+    // {
+    //     [SerializeField]
+    //     public OperationType operation;
+    //     [SerializeField]
+    //     [Tooltip("填充区域的sprite")]
+    //     public Sprite fillerSprite;
+    //     [SerializeField]
+    //     [Tooltip("指示器的sprite")]
+    //     public Sprite indicatorSprite;
+    //     [SerializeField]
+    //     [Tooltip("填充区域的颜色")]
+    //     public Color color;
+    // }
+
+    [SerializeField]
+    GlobalFillerInfo globalFillerInfoData;
 
     [System.Serializable]
     struct FillerInfo
     {
         [SerializeField]
-        [Tooltip("填充区域的sprite")]
-        public Sprite fillerSprite;
-        [SerializeField]
-        [Tooltip("指示器的sprite")]
-        public Sprite indicatorSprite;
-        [SerializeField]
         public float length;
         [SerializeField]
         public OperationType operation;
-        [SerializeField]
-        [Tooltip("填充区域的颜色")]
-        public Color color;
     }
 
     [SerializeField]
@@ -73,10 +84,12 @@ public class SliderController : MonoBehaviour
     {
         fillingAreaRect=transform.Find("Fill Area").gameObject.GetComponent<RectTransform>();
         indicatorAreaRect=transform.Find("Indicator Area").gameObject.GetComponent<RectTransform>();
-        pointerRect=transform.Find("Fill Area/Pointer").gameObject.GetComponent<RectTransform>();
+        pointerRect=transform.Find("Pointer").gameObject.GetComponent<RectTransform>();
         inputHandler=FindObjectOfType<PlayerInputHandler>();
         pointerWidth=pointerRect.rect.width;
         opList=new Dictionary<float, OperationType>();
+
+        globalFillerInfoData.CreateDic();
 
         InitFillers();
         InitPointer();
@@ -105,10 +118,10 @@ public class SliderController : MonoBehaviour
         for(int i=0;i<fillerInfos.Length;i++)
         {
             fillers[i]=Instantiate(fillerPrefab,fillingAreaRect);
-            fillers[i].GetComponent<UnityEngine.UI.Image>().sprite=fillerInfos[i].fillerSprite;
-            fillers[i].GetComponent<UnityEngine.UI.Image>().color=fillerInfos[i].color;
+            fillers[i].GetComponent<UnityEngine.UI.Image>().sprite=globalFillerInfoData.info[fillerInfos[i].operation].fillerSprite;
+            fillers[i].GetComponent<UnityEngine.UI.Image>().color=globalFillerInfoData.info[fillerInfos[i].operation].color;
             indicators[i]=Instantiate(indicatorPrefab,indicatorAreaRect);
-            indicators[i].GetComponent<UnityEngine.UI.Image>().sprite=fillerInfos[i].indicatorSprite;
+            indicators[i].GetComponent<UnityEngine.UI.Image>().sprite=globalFillerInfoData.info[fillerInfos[i].operation].indicatorSprite;
             indicators[i].GetComponent<UnityEngine.UI.Image>().preserveAspect=true;
         }
         UpdateFillerAndIndicator();
