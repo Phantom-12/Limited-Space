@@ -593,20 +593,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalFillerInfoData: {fileID: 11400000, guid: 76e58550a55d66949b7fdeea9c48636d, type: 2}
   fillerInfos:
-  - length: 20
+  - length: 1
     operation: 1
-  - length: 10
+  - length: 1
     operation: 4
-  - length: 10
+  - length: 1
     operation: 3
-  - length: 20
+  - length: 1
     operation: 0
-  - length: 10
-    operation: 3
-  - length: 10
-    operation: 4
-  - length: 20
-    operation: 1
   fillerPrefab: {fileID: 601957082698176899, guid: 1f1507cf8e8d890419f28e8d96d6629e, type: 3}
   indicatorPrefab: {fileID: 7071296383980639735, guid: db8619be16b0fc443a120b68b04d6d02, type: 3}
   start: 0
