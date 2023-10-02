@@ -19,13 +19,13 @@ public class PlayerInputHandler : MonoBehaviour
     private float inputHoldTime;
     private float jumpStartTime;
 
-    SceneController sceneManager;
+    SceneController sceneController;
 
 
     private void Start()
     {
         playerInput=GetComponent<PlayerInput>();
-        sceneManager=FindObjectOfType<SceneController>();
+        sceneController=FindObjectOfType<SceneController>();
     }
 
     private void Update()
@@ -35,7 +35,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         RawMovementInput=context.ReadValue<Vector2>();
         MovementInput=RawMovementInput.normalized;
@@ -45,7 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         if(context.performed)
         {
@@ -61,7 +61,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceHoldInput(InputAction.CallbackContext context)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         if(context.performed)
         {
@@ -77,7 +77,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceHoldDev(bool state)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         if(state)
         {
@@ -93,7 +93,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnSpaceDoubleTapInput(InputAction.CallbackContext context)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         if(context.performed)
         {
@@ -104,7 +104,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMoveInput(Vector2 Input)
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         RawMovementInput=Input;
         MovementInput=RawMovementInput.normalized;
@@ -114,7 +114,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJumpInput()
     {
-        if(sceneManager.Pausing)
+        if(sceneController.Pausing)
             return;
         JumpInput=true;
         JumpInputStop=false;
