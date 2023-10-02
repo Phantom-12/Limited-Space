@@ -80,6 +80,7 @@ public class DesignerController : MonoBehaviour
         if(onDev){
             while(ActionCount<Actions.Length){
                 if(beatCount>=Actions[ActionCount].beatsGap){
+                    Debug.Log(ActionCount);
                     if(Actions[ActionCount].operation==DevType.SpacePressed){
                         inputHandler.OnSpaceHoldDev(true);
                     }else if(Actions[ActionCount].operation==DevType.SpaceRelease){
