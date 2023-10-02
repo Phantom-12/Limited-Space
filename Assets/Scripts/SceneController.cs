@@ -107,4 +107,16 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("ChooseLevel");
         Pause(false);
     }
+
+    public void ToDeathChoice()
+    {
+        SceneManager.LoadScene("DeathChoice");
+        Pause(false);
+    }
+
+    public void ToLifeChoice()
+    {
+        SceneManager.LoadScene("LifeChoice");
+        Pause(false);
+    }
 }

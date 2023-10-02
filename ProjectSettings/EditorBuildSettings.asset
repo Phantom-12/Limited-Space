@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level8.unity
     guid: 6a9fdd6633bdc6748881a16af5f3eef9
+  - enabled: 1
+    path: Assets/Scenes/DeathChoice.unity
+    guid: 39a7bc09437bd134b8c24978c22c7352
+  - enabled: 1
+    path: Assets/Scenes/LifeChoice.unity
+    guid: ebd3e43f8b163354687750fab75af099
   m_configObjects: {}

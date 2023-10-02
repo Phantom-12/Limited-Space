@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public int FacingDirection{get;private set;}
     private Vector2 workspace;
     private bool pause=false;
+    private bool win=false;
     #endregion
 
     #region Unity Callback Functions unity回调函数 
@@ -141,14 +142,20 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Pause();
-        Rb.velocity=Vector2.zero;
-        Anim.SetBool("die",true);
+        if(!win){
+            Pause();
+            Rb.velocity=Vector2.zero;
+            Anim.SetBool("die",true);
+        }
     }
 
     public void Pause()
     {
         pause=true;
+    }
+
+    public void Win(){
+        win=true;
     }
     #endregion
 }
