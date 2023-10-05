@@ -97,7 +97,10 @@ public class SceneController : MonoBehaviour
     public void ToNextScene()
     {
         if(SceneManager.GetActiveScene().buildIndex+1>=SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogWarning("No Next Scene");
             return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         Pause(false);
     }
