@@ -27,6 +27,12 @@ public class SceneController : MonoBehaviour
         Pause(true);
         FindObjectOfType<Player>().Pause();
         completeWindow.SetActive(true);
+        if (GameObject.FindWithTag("snowGlobe") == null)
+        {
+            GameObject.Find("Snowglobe").SetActive(true);
+        }else{
+            GameObject.Find("Snowglobe").SetActive(false);
+        }
     }
 
     public void LevelFailed()
@@ -34,6 +40,12 @@ public class SceneController : MonoBehaviour
         Pause(true);
         FindObjectOfType<Player>().Pause();
         failedWindow.SetActive(true);
+        if (GameObject.FindWithTag("snowGlobe") == null)
+        {
+            GameObject.Find("Snowglobe").SetActive(true);
+        }else{
+            GameObject.Find("Snowglobe").SetActive(false);
+        }
     }
 
     public void OnPauseButtonClick()
