@@ -27,7 +27,7 @@ MonoBehaviour:
     color: {r: 0, g: 1, b: 0, a: 0.49803922}
   - operation: 3
     fillerSprite: {fileID: 0}
-    indicatorSprite: {fileID: 21300000, guid: 3c8840ffc00961540b386c3fd1aeb039, type: 3}
+    indicatorSprite: {fileID: 21300000, guid: 62c8780cd9cc692498dda6c4be1c88ef, type: 3}
     color: {r: 0, g: 1, b: 1, a: 0.49803922}
   - operation: 4
     fillerSprite: {fileID: 0}
