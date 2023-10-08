@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public bool Pausing{get;private set;}
+    bool levelBegun=false;
     [SerializeField]
     GameObject failedWindow,completeWindow,pauseWindow;
     // Start is called before the first frame update
@@ -14,18 +15,27 @@ public class SceneController : MonoBehaviour
         failedWindow.SetActive(false);
         completeWindow.SetActive(false);
         pauseWindow.SetActive(false);
+        FindObjectOfType<Player>().Anim.updateMode=AnimatorUpdateMode.UnscaledTime;
+        Pause(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LevelBegin()
     {
-        
+        levelBegun=true;
+        FindObjectOfType<Player>().Anim.updateMode=AnimatorUpdateMode.Normal;
+        Pause(false);
     }
 
     public void LevelComplete()
     {
         Pause(true);
         FindObjectOfType<Player>().Pause();
+        FindObjectOfType<Player>().Leave();
+    }
+
+    public void LevelCompleteWindow()
+    {
+        Pause(true);
         completeWindow.SetActive(true);
         if (GameObject.FindWithTag("snowGlobe") == null)
         {
@@ -62,6 +72,8 @@ public class SceneController : MonoBehaviour
 
     public void OnPauseButtonClick(bool state)
     {
+        if(!levelBegun)
+            return;
         if(state)
         {
             Pause(true);

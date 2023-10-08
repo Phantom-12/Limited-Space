@@ -145,6 +145,7 @@ public class Player : MonoBehaviour
         if(!win){
             Pause();
             Rb.velocity=Vector2.zero;
+            
             Anim.SetBool("die",true);
         }
     }
@@ -152,6 +153,12 @@ public class Player : MonoBehaviour
     public void Pause()
     {
         pause=true;
+    }
+
+    public void Leave()
+    {
+        Anim.updateMode=AnimatorUpdateMode.UnscaledTime;
+        Anim.SetTrigger("leave");
     }
 
     public void Win(){
