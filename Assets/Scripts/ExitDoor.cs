@@ -25,8 +25,9 @@ public class ExitDoor : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(hasKey);
-        if(!hasKey)
-            return;
-        FindObjectOfType<SceneController>().LevelComplete();
+        if (hasKey)
+        {
+            FindObjectOfType<SceneController>().LevelComplete();
+        }
     }
 }

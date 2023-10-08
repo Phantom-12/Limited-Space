@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25ccbc25bf28e84fa56b7685101463c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoFileName: Life.mp4
+  videoFileName: Life.mov
 --- !u!4 &1645303581
 Transform:
   m_ObjectHideFlags: 0
