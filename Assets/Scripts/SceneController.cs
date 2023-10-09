@@ -146,4 +146,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("LifeChoice");
         Pause(false);
     }
+    public void ToDeafaltScene()
+    {
+        SceneManager.LoadScene("StartScene");
+        Pause(false);
+    }
 }

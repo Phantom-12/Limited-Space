@@ -13,7 +13,7 @@ public class Logo : MonoBehaviour
     bool start = false;
     float eTime = 1f;
     bool end = false;
-    float lastTime = 2.2f;
+    float lastTime = 5.5f;
 
     void Update()
     {
