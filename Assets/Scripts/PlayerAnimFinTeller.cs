@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerAnimFinTeller : MonoBehaviour
 {
 
-    public void PlayerDie()
+    public void PlayerDieAnimFin()
     {
         FindObjectOfType<SceneController>().LevelFailed();
     }
 
-    public void PlayerSpwan()
+    public void PlayerSpwanAnimFin()
     {
-        FindObjectOfType<SceneController>().LevelBegin();
+        FindObjectOfType<SceneController>().LevelBeginEnd();
     }
     
-    public void PlayerLeave()
+    public void PlayerLeaveAnimFin()
     {
         FindObjectOfType<SceneController>().LevelCompleteWindow();
     }

@@ -15,14 +15,19 @@ public class SceneController : MonoBehaviour
         failedWindow.SetActive(false);
         completeWindow.SetActive(false);
         pauseWindow.SetActive(false);
-        FindObjectOfType<Player>().Anim.updateMode=AnimatorUpdateMode.UnscaledTime;
-        Pause(true);
+        LevelBegin();
     }
 
     public void LevelBegin()
     {
+        Pause(true);
+        FindObjectOfType<Player>().Spwan();
+    }
+
+    public void LevelBeginEnd()
+    {
         levelBegun=true;
-        FindObjectOfType<Player>().Anim.updateMode=AnimatorUpdateMode.Normal;
+        FindObjectOfType<Player>().SpwanEnd();
         Pause(false);
     }
 

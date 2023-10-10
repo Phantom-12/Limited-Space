@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     #region Components 组件
     public Animator Anim{get;private set;}
+    public PlayerAudioController AudioController{get;private set;}
     public PlayerInputHandler InputHandler{get;private set;}
     public BoxCollider2D MovementCollider{get;private set;}
     public Rigidbody2D Rb{get;private set;}
@@ -45,14 +46,16 @@ public class Player : MonoBehaviour
         MoveState=new PlayerMoveState(this,StateMachine,playerData,"move");
         JumpState=new PlayerJumpState(this,StateMachine,playerData,"inAir");
         InAirState=new PlayerInAirState(this,StateMachine,playerData,"inAir");
+        
+        Anim=GetComponent<Animator>();
+        AudioController=GetComponent<PlayerAudioController>();
+        InputHandler=GetComponent<PlayerInputHandler>();
+        Rb=GetComponent<Rigidbody2D>();
+        MovementCollider=GetComponent<BoxCollider2D>();
     }
 
     private void Start()
     {
-        Anim=GetComponent<Animator>();
-        InputHandler=GetComponent<PlayerInputHandler>();
-        Rb=GetComponent<Rigidbody2D>();
-        MovementCollider=GetComponent<BoxCollider2D>();
         DashDirectionIndicator=transform.Find("DashDirectionIndicator");
 
         FacingDirection=1;
@@ -145,7 +148,7 @@ public class Player : MonoBehaviour
         if(!win){
             Pause();
             Rb.velocity=Vector2.zero;
-            
+            AudioController.PlayerDie();
             Anim.SetBool("die",true);
         }
     }
@@ -155,8 +158,21 @@ public class Player : MonoBehaviour
         pause=true;
     }
 
+    public void Spwan()
+    {
+        AudioController.PlayerSpwan();
+        Anim.updateMode=AnimatorUpdateMode.UnscaledTime;
+        Anim.SetTrigger("spwan");
+    }
+
+    public void SpwanEnd()
+    {
+        Anim.updateMode=AnimatorUpdateMode.Normal;
+    }
+
     public void Leave()
     {
+        AudioController.PlayerLeave();
         Anim.updateMode=AnimatorUpdateMode.UnscaledTime;
         Anim.SetTrigger("leave");
     }

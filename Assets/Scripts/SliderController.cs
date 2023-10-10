@@ -9,8 +9,8 @@ public enum OperationType
     MoveLeft,
     MoveRight,
     MoveUp,
-    JumpLeft,
-    JumpRight,
+    MoveLeftUp,
+    MoveRightUp,
     Jump,
     //条移动相关
     Invert,
@@ -19,6 +19,10 @@ public enum OperationType
     //其他
     Die,
     None,
+
+    //弃用
+    JumpLeft,
+    JumpRight,
 }
 
 public class SliderController : MonoBehaviour
@@ -229,6 +233,7 @@ public class SliderController : MonoBehaviour
         inputHandler.UseSpaceDoubleTapInput();
     }
 
+    //历史遗留
     void ApplyOperation(OperationType op1,OperationType op2)
     {
         if(op1==OperationType.Die || op2==OperationType.Die)
@@ -330,6 +335,16 @@ public class SliderController : MonoBehaviour
             moveDir+=Vector2.right;
         else if(op==OperationType.MoveUp)
             moveDir+=Vector2.up;
+        else if(op==OperationType.MoveLeftUp)
+        {
+            moveDir+=Vector2.left;
+            moveDir+=Vector2.up;
+        }
+        else if(op==OperationType.MoveRightUp)
+        {
+            moveDir+=Vector2.right;
+            moveDir+=Vector2.up;
+        }
         else if(op==OperationType.Jump)
             jump=true;
         else if(op==OperationType.JumpLeft)
@@ -342,7 +357,7 @@ public class SliderController : MonoBehaviour
             jump=true;
             moveDir+=Vector2.right;
         }
-
+        
         inputHandler.OnMoveInput(moveDir);
         if(jump)
             inputHandler.OnJumpInput();

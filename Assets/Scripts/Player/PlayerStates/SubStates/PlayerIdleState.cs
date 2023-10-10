@@ -16,7 +16,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocityX(0);
+        // player.SetVelocityX(0);
     }
 
     public override void Exit()
@@ -43,5 +43,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if(player.CheckGrounded())
+            player.SetVelocityX(0);
     }
 }
