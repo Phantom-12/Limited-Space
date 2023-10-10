@@ -850,6 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 181059234}
+  - component: {fileID: 181059235}
   m_Layer: 5
   m_Name: FailedWindow
   m_TagString: Untagged
@@ -882,6 +883,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
   m_SizeDelta: {x: 191.1883, y: 240.0456}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &181059235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181059233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90be8ef027097634b92860c13daeabef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1341921203}
 --- !u!1 &199304887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,17 +1801,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_PointAction: {fileID: -6961893791646134448, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_MoveAction: {fileID: -8013912828342306445, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_SubmitAction: {fileID: 1888650835672871886, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_CancelAction: {fileID: 558068359413976133, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_LeftClickAction: {fileID: -4329639592582997937, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_MiddleClickAction: {fileID: -7392280126714178139, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_RightClickAction: {fileID: 7087127555726805949, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_ScrollWheelAction: {fileID: -1262350721654015338, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -8199941987725456260, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 3193229170170155526, guid: 95d52f5efe6f26b4f8e36986b4a1666c, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -4073,6 +4087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279225328}
+  - component: {fileID: 1279225329}
   m_Layer: 5
   m_Name: CompleteWindow
   m_TagString: Untagged
@@ -4105,6 +4120,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
   m_SizeDelta: {x: 191.1883, y: 240.0456}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1279225329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279225327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90be8ef027097634b92860c13daeabef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 832095890}
 --- !u!1 &1306421400
 GameObject:
   m_ObjectHideFlags: 0

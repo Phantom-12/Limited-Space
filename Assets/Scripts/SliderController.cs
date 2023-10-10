@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum OperationType
@@ -83,6 +84,8 @@ public class SliderController : MonoBehaviour
     float pointerMoveSpeed;
 
     OperationType lastOp=OperationType.Die;
+    double lastPressTime;
+    // readonly double maxProtectTime=0.2f;
 
     void Awake()
     {
@@ -324,6 +327,11 @@ public class SliderController : MonoBehaviour
         {
             replayed=false;
         }
+
+        // if(op!=OperationType.None && lastOp==OperationType.Invert &&Time.time-lastPressTime<maxProtectTime)
+        // {
+        //     return;
+        // }
         
         //角色移动相关
         Vector2 moveDir=Vector2.zero;
@@ -382,6 +390,7 @@ public class SliderController : MonoBehaviour
         }
         //if(!(lastOp==OperationType.Die && op==OperationType.None))
         lastOp=op;
+        lastPressTime=Time.time;
     }
 
     void PointerReplay()
