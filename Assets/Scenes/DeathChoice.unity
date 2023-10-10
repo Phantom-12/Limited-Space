@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7798bc50babbd61429bc38444483a029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoLength: 16
+  videoLength: 40
 --- !u!328 &1266292241
 VideoPlayer:
   m_ObjectHideFlags: 0

@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7798bc50babbd61429bc38444483a029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoLength: 16
+  videoLength: 40
 --- !u!328 &1645303583
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -748,7 +748,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 39265b6498208ab4497baf894977378e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9abd26c00a7d910418c5c27262368459, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
