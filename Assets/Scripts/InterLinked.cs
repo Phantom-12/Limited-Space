@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InterLinked : MonoBehaviour
 {
     public Image interLinked;
+    public Image tip;
     private List<Sprite> space;
     private GameObject Cwindow;
     private GameObject Fwindow;
@@ -30,6 +31,7 @@ public class InterLinked : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
+                Destroy(tip);
                 interLinked.sprite = space[2];
             }
             if (Input.GetKeyUp(KeyCode.Space))

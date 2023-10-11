@@ -26,7 +26,7 @@ public class ExitDoor : MonoBehaviour
     {
         if (hasKey)
         {
-            FindObjectOfType<SceneController>().LevelComplete();
+                FindObjectOfType<SceneController>().LevelComplete();
         }
     }
 }
