@@ -1569,11 +1569,11 @@ MonoBehaviour:
   - length: 1
     operation: 6
   - length: 2
-    operation: 2
+    operation: 4
   - length: 1
     operation: 8
   - length: 2
-    operation: 2
+    operation: 3
   - length: 1
     operation: 6
   - length: 3
@@ -3094,7 +3094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: -10.76562, y: 0, z: -10}
+  m_FollowOffset: {x: 22.10438, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
