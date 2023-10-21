@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -58,7 +59,6 @@ public class PlayerInputHandler : MonoBehaviour
             JumpInputStop=true;
         }
     }
-
     public void OnSpaceHoldInput(InputAction.CallbackContext context)
     {
         if(sceneController.Pausing)

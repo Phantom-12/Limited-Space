@@ -64,7 +64,7 @@ public class PlayerAudioController : MonoBehaviour
 
     public void PlayerFlyEnd()
     {
-        Debug.Log("!");
+        // Debug.Log("!");
         flying=false;
         audioPlayer.time = 2.0416f;
     }
