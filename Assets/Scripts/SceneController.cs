@@ -57,9 +57,9 @@ public class SceneController : MonoBehaviour
         failedWindow.SetActive(true);
         if (GameObject.FindWithTag("snowGlobe") == null)
         {
-            GameObject.Find("Snowglobe").SetActive(true);
+            GameObject.Find("snowglobe").SetActive(true);
         }else{
-            GameObject.Find("Snowglobe").SetActive(false);
+            GameObject.Find("snowglobe").SetActive(false);
         }
     }
 

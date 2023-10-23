@@ -1583,6 +1583,22 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[0].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[1].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[2].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[3].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[0].operation
       value: 1
       objectReference: {fileID: 0}
@@ -1640,6 +1656,21 @@ PrefabInstance:
       objectReference: {fileID: 2092993030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+--- !u!1 &551947146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404441620128750, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 551947145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &551947147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404442771569180, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 551947145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &551947148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404443232424595, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 551947145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &567093286
 GameObject:
   m_ObjectHideFlags: 0
@@ -6752,9 +6783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56d9c6ded106f84a9bdfd546a77247b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failedWindow: {fileID: 1512958493}
-  completeWindow: {fileID: 1104212225}
-  pauseWindow: {fileID: 1745780457}
+  failedWindow: {fileID: 551947147}
+  completeWindow: {fileID: 551947146}
+  pauseWindow: {fileID: 551947148}
 --- !u!4 &1948446721
 Transform:
   m_ObjectHideFlags: 0

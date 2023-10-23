@@ -2878,6 +2878,21 @@ PrefabInstance:
       objectReference: {fileID: 261897623}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+--- !u!1 &528269255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404441620128750, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 528269254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &528269256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404442771569180, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 528269254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &528269257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068404443232424595, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+  m_PrefabInstance: {fileID: 528269254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &557731815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6539,9 +6554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56d9c6ded106f84a9bdfd546a77247b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failedWindow: {fileID: 1505426750}
-  completeWindow: {fileID: 993151462}
-  pauseWindow: {fileID: 1653985781}
+  failedWindow: {fileID: 528269256}
+  completeWindow: {fileID: 528269255}
+  pauseWindow: {fileID: 528269257}
 --- !u!4 &1443954163
 Transform:
   m_ObjectHideFlags: 0
