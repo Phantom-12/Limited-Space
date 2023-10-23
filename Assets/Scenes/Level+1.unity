@@ -6675,6 +6675,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2279789833169295108, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279789833169295108, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: m_ControlPath
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
     - target: {fileID: 9068404441696663273, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -22,7 +22,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "SpaceHold",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -396,17 +396,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ce16466a-abad-4fb0-9d47-61e68d8cb774",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false

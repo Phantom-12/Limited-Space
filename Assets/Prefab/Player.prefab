@@ -249,8 +249,8 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f6ffc508-2353-4e22-91d4-003985258b24
     m_ActionName: Player/Space[/Keyboard/c]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Touch
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

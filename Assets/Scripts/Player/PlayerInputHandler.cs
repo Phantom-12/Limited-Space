@@ -75,6 +75,16 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnSpaceDown()
+    {
+        SpaceHoldInput=true;
+    }
+
+    public void OnSpaceUp()
+    {
+        SpaceHoldInput=false;
+    }
+
     public void OnSpaceHoldDev(bool state)
     {
         if(sceneController.Pausing)
