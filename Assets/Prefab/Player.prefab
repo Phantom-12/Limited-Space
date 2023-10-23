@@ -110,7 +110,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5789963b6acb5ca46b8f15e6a07a95f1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f6ffc508-2353-4e22-91d4-003985258b24
     m_ActionName: Player/Space[/Keyboard/c]
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Touch
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
