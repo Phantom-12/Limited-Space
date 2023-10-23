@@ -54,7 +54,7 @@ public class PlayerMoveState : PlayerGroundedState
                 player.AudioController.PlayerFlyStart();
                 flying=true;
             }
-            Debug.Log(flying);
+            // Debug.Log(flying);
         }
         else
         {
