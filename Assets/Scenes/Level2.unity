@@ -2376,7 +2376,7 @@ PrefabInstance:
       objectReference: {fileID: 313412217}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[0].length
@@ -2399,16 +2399,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: fillerInfos.Array.data[2].operation
-      value: 0
+      propertyPath: fillerInfos.Array.data[0].operation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: fillerInfos.Array.data[3].operation
+      propertyPath: fillerInfos.Array.data[1].operation
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[2].operation
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[3].operation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[4].operation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442918416278, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2701,7 +2709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 22.10438, y: 0, z: -10}
+  m_FollowOffset: {x: 24.10438, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4597,6 +4605,10 @@ PrefabInstance:
     - target: {fileID: 1712401176034635114, guid: f11c999de1d909f4298881c9054e7a26, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712401176034635116, guid: f11c999de1d909f4298881c9054e7a26, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11c999de1d909f4298881c9054e7a26, type: 3}

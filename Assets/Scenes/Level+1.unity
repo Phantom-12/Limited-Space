@@ -962,7 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162041445}
   - component: {fileID: 162041446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 176384506}
   - component: {fileID: 176384508}
   - component: {fileID: 176384507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2935,7 +2935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595149039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6018,7 +6018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1259195683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Standard Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6139,7 +6139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271237150}
   - component: {fileID: 1271237151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6845,7 +6845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[2].operation
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[3].operation
@@ -6853,7 +6853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[4].operation
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[5].operation
@@ -7298,7 +7298,7 @@ GameObject:
   - component: {fileID: 1536732342}
   - component: {fileID: 1536732344}
   - component: {fileID: 1536732343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}

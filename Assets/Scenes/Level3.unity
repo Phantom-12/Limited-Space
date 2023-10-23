@@ -1580,7 +1580,7 @@ PrefabInstance:
       objectReference: {fileID: 2092993030}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[0].length
@@ -1599,6 +1599,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[4].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[5].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[0].operation
       value: 1
       objectReference: {fileID: 0}
@@ -1608,7 +1616,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: fillerInfos.Array.data[2].operation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[3].operation
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[4].operation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[5].operation
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442918416278, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1895,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 24.10438, y: 0, z: -10}
+  m_FollowOffset: {x: -10.76562, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
