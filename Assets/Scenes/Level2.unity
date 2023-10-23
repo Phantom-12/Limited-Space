@@ -2374,21 +2374,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 313412217}
-    - target: {fileID: 9068404442509628637, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[0].length
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9068404442509628637, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: m_AnchorMin.y
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[1].length
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9068404442509628637, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3.2
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[2].length
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9068404442509628637, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -40.100006
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[3].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[4].length
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[2].operation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[3].operation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068404442509628636, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: fillerInfos.Array.data[4].operation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9068404442918416278, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
