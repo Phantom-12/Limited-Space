@@ -47,4 +47,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LifeChoice.unity
     guid: ebd3e43f8b163354687750fab75af099
+  - enabled: 1
+    path: Assets/Scenes/Level+1.unity
+    guid: 39683ecbd3aef84419084dee6fea0855
+  - enabled: 1
+    path: Assets/Scenes/Level+2.unity
+    guid: e9105dd0bb4b8a842acc646eff856602
+  - enabled: 1
+    path: Assets/Scenes/Level+3.unity
+    guid: a5e41598f9f0e5242bd7af56113fc00b
+  - enabled: 1
+    path: Assets/Scenes/Level+4.unity
+    guid: 5d334df00cd8cf743acf360907efcc14
   m_configObjects: {}

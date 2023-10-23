@@ -24,21 +24,37 @@ public class MovetoScence : MonoBehaviour
     }
     public void ChangeScene4()
     {
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level+3");
     }
     public void ChangeScene5()
     {
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level4");
     }
     public void ChangeScene6()
     {
-        SceneManager.LoadScene("Level6");
+        SceneManager.LoadScene("Level+4");
     }
     public void ChangeScene7()
     {
-        SceneManager.LoadScene("Level7");
+        SceneManager.LoadScene("Level5");
     }
     public void ChangeScene8()
+    {
+        SceneManager.LoadScene("Level+2");
+    }
+    public void ChangeScene9()
+    {
+        SceneManager.LoadScene("Level6");
+    }
+    public void ChangeScene10()
+    {
+        SceneManager.LoadScene("Level+1");
+    }
+    public void ChangeScene11()
+    {
+        SceneManager.LoadScene("Level7");
+    }
+    public void ChangeScene12()
     {
         SceneManager.LoadScene("Level8");
     }

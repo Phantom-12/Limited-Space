@@ -29,12 +29,12 @@ public class InterLinked : MonoBehaviour
         Pwindow = GameObject.Find("PauseWindow");
         if (Cwindow == null && Fwindow == null && Pwindow == null)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space)||Input.GetButton("Fire1"))
             {
                 Destroy(tip);
                 interLinked.sprite = space[2];
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space)|| Input.GetButtonUp("Fire1"))
             {
                 interLinked.sprite = space[1];
                 interLinked.sprite = space[0];
