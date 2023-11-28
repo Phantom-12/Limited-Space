@@ -6804,6 +6804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_new
       objectReference: {fileID: 0}
+    - target: {fileID: 9068404442375519366, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9068404442429408927, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6888,6 +6892,10 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 806748880}
+    - target: {fileID: 9068404443195336106, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9068404443276604015, guid: 518817a4a60cf2a4183ac8393706cba6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
