@@ -15,8 +15,8 @@ import android.webkit.WebViewClient;
 public class PrivacyActivity extends Activity implements DialogInterface.OnClickListener {
     boolean useLocalHtml = true;
     String privacyUrl = "https://docs.qq.com/pdf/DRFVrZE9OcWFudnpZ?";
-    final String htmlStr = "欢迎您使用Limited  2  Space！<br>
-    我们非常重视保护您的个人信息和隐私。您可以通过<a href=\"https://docs.qq.com/pdf/DRFVrZE9OcWFudnpZ?\">《Limited 2 Space隐私政策》</a>了解我们收集、使用、存储用户个人信息的情况，以及您所享有的相关权利。<br>"+
+    final String htmlStr = "欢迎您使用Limited  2  Space！<br>"+
+    "我们非常重视保护您的个人信息和隐私。您可以通过<a href=\"https://docs.qq.com/pdf/DRFVrZE9OcWFudnpZ?\">《Limited 2 Space隐私政策》</a>了解我们收集、使用、存储用户个人信息的情况，以及您所享有的相关权利。<br>"+
     "请您仔细阅读并充分理解相关内容： <br>"+
     "1.  为向您提供游戏服务，我们将依据<a href=\"https://docs.qq.com/pdf/DRFVrZE9OcWFudnpZ?\">《Limited 2 Space隐私政策》</a>收集、使用、存储必要的信息。<br>"+
     "2.  基于您的明示授权，虽然我们并没有相关设备权限，您有权拒绝或取消授权。<br>"+
